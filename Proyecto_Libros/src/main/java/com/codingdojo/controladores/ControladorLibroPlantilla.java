@@ -1,5 +1,7 @@
 package com.codingdojo.controladores;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,5 +26,12 @@ public class ControladorLibroPlantilla {
 		model.addAttribute("lenguaje", libro.getLenguaje());
 		model.addAttribute("paginas", libro.getNumerodepaginas());
 		return "index.jsp";
+	}
+	@RequestMapping( value = "/libros", method = RequestMethod.GET )
+	public String Lista(Model model) {
+		List<Libro> libros = servicioLibro.allLibros();
+		model.addAttribute("listaLibros", libros);
+		return "lista.jsp";
+		
 	}
 }
