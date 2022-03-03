@@ -1,0 +1,18 @@
+@charset "ISO-8859-1";
+
+h1{
+	text-align: center;
+}
+div{
+	display:flex;
+	justify-content:center;
+}
+table{
+	border: 3px solid black;
+	border-collapse:collapse;
+}
+th{
+	border-right: 3px solid black;
+	padding: 5px;
+	
+}

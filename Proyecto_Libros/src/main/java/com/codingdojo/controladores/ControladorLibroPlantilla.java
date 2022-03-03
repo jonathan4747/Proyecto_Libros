@@ -2,6 +2,8 @@ package com.codingdojo.controladores;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,7 +30,7 @@ public class ControladorLibroPlantilla {
 		return "index.jsp";
 	}
 	@RequestMapping( value = "/libros", method = RequestMethod.GET )
-	public String Lista(Model model) {
+	public String Lista(Model model , HttpSession session) {
 		List<Libro> libros = servicioLibro.allLibros();
 		model.addAttribute("listaLibros", libros);
 		return "lista.jsp";
